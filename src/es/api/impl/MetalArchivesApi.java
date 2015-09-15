@@ -23,7 +23,7 @@ public class MetalArchivesApi implements IMetalArchivesApi {
 
     @Override
     public List<Album> findAlbumsByIdBand(String id) {
-        String uri = "http://www.metal-archives.com/band/discography/id/"+id;
+        String uri = "http://www.metal-archives.com/band/discography/id/"+id+"/tab/all";
         Document doc = http.getHtmlDocument(uri);
 
         List<Album> albums = null;

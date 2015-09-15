@@ -1,5 +1,6 @@
 package es.api.main;
 
+import es.api.impl.FactoryMetalArchives;
 import es.api.models.Album;
 import es.api.models.Band;
 
@@ -19,7 +20,7 @@ public class Main {
 
         for(Album a: albums) {
             System.out.println("Nombre: " + a.getName());
-            System.out.println("Genere: " + a.getType());
+            System.out.println("Type: " + a.getType());
             System.out.println("Year: " + a.getYear());
             System.out.println("Url: " + a.getUrlInfo());
         }
