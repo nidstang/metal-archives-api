@@ -5,12 +5,12 @@ import es.api.impl.FactoryMetalArchives;
 import java.util.List;
 
 /**
- * Created by Pablo on 14/09/2015.
+ * Created by Satan on 14/09/2015.
  */
 public class Band {
     private String id;
     private String name;
-    private String genere;
+    private String genre;
     private String location;
     private String urlInfo;
     private List<Album> albums;
@@ -61,14 +61,14 @@ public class Band {
     /**
      * @return the genere
      */
-    public String getGenere() {
-        return genere;
+    public String getGenre() {
+        return genre;
     }
     /**
      * @param genere the genere to set
      */
-    public void setGenere(String genere) {
-        this.genere = genere;
+    public void setGenre(String genere) {
+        this.genre = genere;
     }
     /**
      * @return the location

@@ -4,7 +4,7 @@ import es.api.declarations.Configuration;
 import es.api.declarations.LoggerHTTP;
 
 /**
- * Created by Pablo on 15/09/2015.
+ * Created by Satan on 15/09/2015.
  */
 public class Logger implements LoggerHTTP
 {

@@ -1,18 +1,25 @@
 package es.api.main;
 
+import es.api.declarations.IMetalArchivesApi;
 import es.api.impl.FactoryMetalArchives;
+import es.api.impl.MetalArchivesApi;
 import es.api.models.Album;
 import es.api.models.Band;
 
 import java.util.List;
 
 /**
- * Created by Pablo on 14/09/2015.
+ * Created by Satan on 14/09/2015.
  */
 public class Main {
 
     public static void main(String[] args) {
-        Band band = new Band();
+        //Search example
+        FactoryMetalArchives.api.findBands("my dying bride", MetalArchivesApi.SEARCH_TYPES.BAND_NAME);
+
+
+
+        /*Band band = new Band();
         band.setId("305");
 
         List<Album> albums = band.getAlbums();
@@ -23,6 +30,6 @@ public class Main {
             System.out.println("Type: " + a.getType());
             System.out.println("Year: " + a.getYear());
             System.out.println("Url: " + a.getUrlInfo());
-        }
+        }*/
     }
 }

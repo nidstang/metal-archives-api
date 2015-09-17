@@ -4,9 +4,10 @@ import com.google.gson.JsonArray;
 import org.jsoup.nodes.Document;
 
 /**
- * Created by Pablo on 14/09/2015.
+ * Created by Satan on 14/09/2015.
  */
 public interface IHttpHelper {
-    public Document getHtmlDocument (String url);
-    public JsonArray getObjectJson   (String url);
+    public Document     getHtmlDocument (String url);
+    public JsonArray    getObjectJson   (String url);
+    public String       getTextDocument (String url);
 }

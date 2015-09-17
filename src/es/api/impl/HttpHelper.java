@@ -10,7 +10,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 /**
- * Created by Pablo on 14/09/2015.
+ * Created by Satan on 14/09/2015.
  */
 public class HttpHelper implements IHttpHelper {
 
@@ -35,7 +35,7 @@ public class HttpHelper implements IHttpHelper {
 
         }
         catch (Exception ex) {
-            FactoryMetalArchives.log.printMessage("Ha ocurrido un error: " + ex.getMessage());
+            FactoryMetalArchives.log.printMessage("An error occurred: " + ex.getMessage());
             ex.printStackTrace();
         }
         finally {
@@ -62,6 +62,11 @@ public class HttpHelper implements IHttpHelper {
 
     @Override
     public JsonArray getObjectJson(String url) {
+        return null;
+    }
+
+    @Override
+    public String getTextDocument(String url) {
         return null;
     }
 }
