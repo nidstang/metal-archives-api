@@ -1,8 +1,9 @@
 package es.api.impl;
 
-import com.google.gson.JsonArray;
 import es.api.declarations.IHttpHelper;
 import es.api.utils.StreamUtils;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
@@ -13,20 +14,21 @@ import java.net.URL;
  * Created by Satan on 14/09/2015.
  */
 public class HttpHelper implements IHttpHelper {
+    public HttpHelper() {
 
-    private HttpURLConnection mUrlConnection;
+    }
 
     private String openHTTPGETConnection(String url) {
-        this.mUrlConnection = null;
+        HttpURLConnection mUrlConnection = null;
         String response = "";
 
         try {
             URL url_dir = new URL(url);
-            this.mUrlConnection = (HttpURLConnection)url_dir.openConnection();
-            int responseCode = this.mUrlConnection.getResponseCode();
+            mUrlConnection = (HttpURLConnection)url_dir.openConnection();
+            int responseCode = mUrlConnection.getResponseCode();
 
             if(responseCode == HttpURLConnection.HTTP_OK) {
-                response = StreamUtils.streamToString(this.mUrlConnection.getInputStream());
+                response = StreamUtils.streamToString(mUrlConnection.getInputStream());
                 FactoryMetalArchives.log.printMessage("Response string: " + response);
             }
             else {
@@ -39,8 +41,8 @@ public class HttpHelper implements IHttpHelper {
             ex.printStackTrace();
         }
         finally {
-            if(null != this.mUrlConnection) {
-                this.mUrlConnection.disconnect();
+            if(null != mUrlConnection) {
+                mUrlConnection.disconnect();
             }
         }
 
@@ -52,17 +54,24 @@ public class HttpHelper implements IHttpHelper {
         String res = this.openHTTPGETConnection(url);
 
         if(res != null) {
-            Document doc = Jsoup.parse(res);
-
-            return doc;
+            return Jsoup.parse(res);
         }
 
         return null;
     }
 
     @Override
-    public JsonArray getObjectJson(String url) {
-        return null;
+    public JSONObject getObjectJson(String url) {
+        JSONObject jsonObject = null;
+
+        try {
+            return new JSONObject(this.openHTTPGETConnection(url));
+        }
+        catch(JSONException ex) {
+            FactoryMetalArchives.log.printMessage("Couldn't read the json");
+            return null;
+        }
+
     }
 
     @Override

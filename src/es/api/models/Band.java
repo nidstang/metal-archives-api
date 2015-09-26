@@ -1,13 +1,16 @@
 package es.api.models;
 
+import es.api.declarations.IMetalArchivesApi;
 import es.api.impl.FactoryMetalArchives;
+import org.json.JSONArray;
 
 import java.util.List;
+import java.util.Properties;
 
 /**
  * Created by Satan on 14/09/2015.
  */
-public class Band {
+public class Band extends Model {
     private String id;
     private String name;
     private String genre;
@@ -27,6 +30,15 @@ public class Band {
         }
 
         return albums;
+    }
+
+    public static List<Band> find(IMetalArchivesApi.SEARCH_FIELDS search_by, String id) {
+        JSONArray jsonArray = FactoryMetalArchives.api.find(id, IMetalArchivesApi.SEARCH_TYPES.BAND, search_by);
+        if(null != jsonArray) {
+
+        }
+
+        return null;
     }
 
     /*public void loadMoreInfo() {

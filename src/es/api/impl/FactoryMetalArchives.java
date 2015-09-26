@@ -10,7 +10,7 @@ import es.api.utils.Logger;
  */
 public class FactoryMetalArchives {
     public static IHttpHelper       httpHelper  = new HttpHelper        ();
-    public static IMetalArchivesApi api         = new MetalArchivesApi  (FactoryMetalArchives.httpHelper);
+    public static IMetalArchivesApi api         = new MetalArchivesApi  ();
     public static LoggerHTTP        log         = new Logger();
 
 

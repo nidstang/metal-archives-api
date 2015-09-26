@@ -3,7 +3,7 @@ package es.api.models;
 /**
  * Created by Satan on 14/09/2015.
  */
-public class Album {
+public class Album extends Model {
     private String name;
     private String type;
     private String year;

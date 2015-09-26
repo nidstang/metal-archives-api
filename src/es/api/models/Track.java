@@ -3,5 +3,5 @@ package es.api.models;
 /**
  * Created by Satan on 14/09/2015.
  */
-public class Track {
+public class Track extends Model {
 }

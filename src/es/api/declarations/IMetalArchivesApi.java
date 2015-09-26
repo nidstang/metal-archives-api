@@ -1,8 +1,7 @@
 package es.api.declarations;
 
-import es.api.impl.FactoryMetalArchives;
 import es.api.models.Album;
-import es.api.models.Band;
+import org.json.JSONArray;
 
 import java.util.List;
 
@@ -11,13 +10,20 @@ import java.util.List;
  */
 public interface IMetalArchivesApi {
     enum SEARCH_TYPES {
-        BAND_NAME,
-        BAND_GENRE,
-        ALBUM_TITLE,
-        SONG_TITLE,
+        BAND,
+        ALBUM,
+        SONG,
         ARTIST
     }
 
+    enum SEARCH_FIELDS {
+        NAME,
+        GENRE,
+    }
+
+
+    /* HTML RESPONSE */
     List<Album> findAlbumsByIdBand  (String id);
-    List<Band>  findBands           (String identifier, SEARCH_TYPES search_type);
+    /* JSON RESPONSE */
+    JSONArray find                  (String identifier, SEARCH_TYPES search_type, SEARCH_FIELDS search_fields);
 }

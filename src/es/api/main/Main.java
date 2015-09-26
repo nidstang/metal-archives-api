@@ -15,9 +15,8 @@ public class Main {
 
     public static void main(String[] args) {
         //Search example
-        FactoryMetalArchives.api.findBands("my dying bride", MetalArchivesApi.SEARCH_TYPES.BAND_NAME);
-
-
+        FactoryMetalArchives.api.find("my dying bride", MetalArchivesApi.SEARCH_TYPES.BAND, MetalArchivesApi.SEARCH_FIELDS.NAME);
+        //Band.find(IMetalArchivesApi.SEARCH_FIELDS.NAME, "my dying bride");
 
         /*Band band = new Band();
         band.setId("305");
