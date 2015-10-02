@@ -15,10 +15,10 @@ public class Main {
 
     public static void main(String[] args) {
         //Search example
-        FactoryMetalArchives.api.find("my dying bride", MetalArchivesApi.SEARCH_TYPES.BAND, MetalArchivesApi.SEARCH_FIELDS.NAME);
+        //FactoryMetalArchives.api.find("my dying bride", MetalArchivesApi.SEARCH_TYPES.BAND, MetalArchivesApi.SEARCH_FIELDS.NAME);
         //Band.find(IMetalArchivesApi.SEARCH_FIELDS.NAME, "my dying bride");
 
-        /*Band band = new Band();
+        Band band = new Band();
         band.setId("305");
 
         List<Album> albums = band.getAlbums();
@@ -29,6 +29,6 @@ public class Main {
             System.out.println("Type: " + a.getType());
             System.out.println("Year: " + a.getYear());
             System.out.println("Url: " + a.getUrlInfo());
-        }*/
+        }
     }
 }
